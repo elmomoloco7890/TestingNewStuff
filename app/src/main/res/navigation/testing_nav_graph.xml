@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/testing_nav_graph"
+    app:startDestination="@id/testNewHome">
+
+    <fragment
+        android:id="@+id/testNewHome"
+        android:name="prime.projects.testingnewstuff.ui.fragments.TestNewHome"
+        android:label="Home"
+        tools:layout="@layout/fragment_test_new_home">
+        <action
+            android:id="@+id/action_testNewHome_to_testNewCategories"
+            app:destination="@id/testNewCategories" />
+    </fragment>
+    <fragment
+        android:id="@+id/testNewCategories"
+        android:name="prime.projects.testingnewstuff.ui.fragments.TestNewCategories"
+        android:label="Categories"
+        tools:layout="@layout/fragment_test_new_categories">
+        <action
+            android:id="@+id/action_testNewCategories_to_testingNewInnerCategories"
+            app:destination="@id/testingNewInnerCategories" />
+    </fragment>
+    <fragment
+        android:id="@+id/testNewDetails"
+        android:name="prime.projects.testingnewstuff.ui.fragments.TestNewDetails"
+        android:label="Menu Details"
+        tools:layout="@layout/fragment_test_new_details">
+        <action
+            android:id="@+id/action_testNewDetails_to_testNewHome"
+            app:destination="@id/testNewHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/testingNewInnerCategories"
+        android:name="prime.projects.testingnewstuff.ui.fragments.TestingNewInnerCategories"
+        android:label="Menu items"
+        tools:layout="@layout/fragment_testing_new_inner_categories">
+        <action
+            android:id="@+id/action_testingNewInnerCategories_to_testNewDetails"
+            app:destination="@id/testNewDetails" />
+    </fragment>
+</navigation>
